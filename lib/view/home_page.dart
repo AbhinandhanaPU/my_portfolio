@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/constants/color_const.dart';
 import 'package:my_portfolio/utils/constants/size.dart';
@@ -7,6 +8,7 @@ import 'package:my_portfolio/view/widgets/header/header_desktop.dart';
 import 'package:my_portfolio/view/widgets/header/header_mobile.dart';
 import 'package:my_portfolio/view/widgets/home/home_desktop.dart';
 import 'package:my_portfolio/view/widgets/home/home_mobile.dart';
+import 'package:my_portfolio/view/widgets/projects/project_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,8 +48,6 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: PageView(
                   scrollDirection: Axis.vertical,
-                  pageSnapping: false,
-                  // dragStartBehavior: DragStartBehavior.down,
                   physics: AlwaysScrollableScrollPhysics(),
                   children: [
                     // home
@@ -56,9 +56,11 @@ class _HomePageState extends State<HomePage> {
                     else
                       HomeMobile(),
                     // about
-                    About()
+                    About(),
 
                     // projects
+                    ProjectSection(),
+
                     // education
                     // certifications
                     // contact
