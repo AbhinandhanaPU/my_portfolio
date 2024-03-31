@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/color_const.dart';
+import 'package:my_portfolio/utils/constants/color_const.dart';
 
 class HomeMobile extends StatefulWidget {
   const HomeMobile({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/color_const.dart';
-import 'package:my_portfolio/constants/nav_items.dart';
-import 'package:my_portfolio/style/style.dart';
-import 'package:my_portfolio/widgets/site_logo.dart';
+import 'package:my_portfolio/utils/constants/color_const.dart';
+import 'package:my_portfolio/utils/constants/nav_items.dart';
+import 'package:my_portfolio/utils/style/style.dart';
+import 'package:my_portfolio/view/widgets/site_logo.dart';
 
 class HeaderDesktop extends StatefulWidget {
   const HeaderDesktop({super.key});

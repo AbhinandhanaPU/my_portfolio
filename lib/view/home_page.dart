@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/color_const.dart';
-import 'package:my_portfolio/constants/size.dart';
-import 'package:my_portfolio/widgets/about/about_desktop.dart';
-import 'package:my_portfolio/widgets/drawer_mobile.dart';
-import 'package:my_portfolio/widgets/header/header_desktop.dart';
-import 'package:my_portfolio/widgets/header/header_mobile.dart';
-import 'package:my_portfolio/widgets/home/home_desktop.dart';
-import 'package:my_portfolio/widgets/home/home_mobile.dart';
+import 'package:my_portfolio/utils/constants/color_const.dart';
+import 'package:my_portfolio/utils/constants/size.dart';
+import 'package:my_portfolio/view/widgets/about/about.dart';
+import 'package:my_portfolio/view/widgets/header/drawer_mobile.dart';
+import 'package:my_portfolio/view/widgets/header/header_desktop.dart';
+import 'package:my_portfolio/view/widgets/header/header_mobile.dart';
+import 'package:my_portfolio/view/widgets/home/home_desktop.dart';
+import 'package:my_portfolio/view/widgets/home/home_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                     else
                       HomeMobile(),
                     // about
-                    AboutAll()
+                    About()
 
                     // projects
                     // education

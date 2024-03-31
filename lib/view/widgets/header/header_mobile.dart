@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/style/style.dart';
-import 'package:my_portfolio/widgets/site_logo.dart';
+import 'package:my_portfolio/utils/style/style.dart';
+import 'package:my_portfolio/view/widgets/site_logo.dart';
 
 class HeaderMobile extends StatelessWidget {
   const HeaderMobile({

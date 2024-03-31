@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/color_const.dart';
-import 'package:my_portfolio/constants/nav_items.dart';
+import 'package:my_portfolio/utils/constants/color_const.dart';
+import 'package:my_portfolio/utils/constants/nav_items.dart';
 
 class DrawerMobile extends StatelessWidget {
   const DrawerMobile({

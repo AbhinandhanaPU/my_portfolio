@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/color_const.dart';
+import 'package:my_portfolio/utils/constants/about_items.dart';
+import 'package:my_portfolio/utils/constants/color_const.dart';
 
-class AboutAll extends StatefulWidget {
-  const AboutAll({super.key});
+class About extends StatefulWidget {
+  const About({super.key});
 
   @override
-  State<AboutAll> createState() => _AboutAllState();
+  State<About> createState() => _AboutState();
 }
 
-class _AboutAllState extends State<AboutAll> {
-  final List<String> techList = ["Flutter", "Dart"];
-  final List<String> toolList = ["Visual Studio", "Android Studio", "Figma"];
-  final List<Map<String, String>> personalDetails = [
-    {"Name ": "Abhinandhana P U"},
-    {"Email": "abh@gmail.com"},
-    {"Age": "21"},
-    {"From": "Thrissur,Kerala"},
-  ];
+class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
