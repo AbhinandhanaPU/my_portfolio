@@ -11,10 +11,10 @@ class ProjectSection extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
       child: Container(
+        padding: EdgeInsets.only(top: 15, left: 10, right: 10),
         width: screenWidth,
         child: Column(
           children: [
-            const SizedBox(height: 30),
             const Text(
               "Projects",
               style: TextStyle(
@@ -23,7 +23,7 @@ class ProjectSection extends StatelessWidget {
                 color: CustomColor.whitePrimary,
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             // Work projects cards
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 900),

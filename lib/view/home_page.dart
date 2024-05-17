@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/constants/color_const.dart';
 import 'package:my_portfolio/utils/constants/size.dart';
 import 'package:my_portfolio/view/widgets/about/about.dart';
+import 'package:my_portfolio/view/widgets/contact/contact_section.dart';
 import 'package:my_portfolio/view/widgets/education/education_desktop.dart';
 import 'package:my_portfolio/view/widgets/education/education_mobile.dart';
 import 'package:my_portfolio/view/widgets/header/drawer_mobile.dart';
@@ -69,6 +70,7 @@ class _HomePageState extends State<HomePage> {
                       EducationMobile(),
 
                     // certifications
+                    ContactSection(),
                     // contact
                   ],
                 ),

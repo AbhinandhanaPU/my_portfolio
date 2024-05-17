@@ -26,12 +26,12 @@ class _AboutState extends State<About> {
           children: [
             Text(
               "Who Am I ?",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
             Text(
               "I'm Abhinandhana P U ,\nA Flutter Developer",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 10),
             Text(
@@ -44,50 +44,41 @@ class _AboutState extends State<About> {
               textAlign: TextAlign.justify,
               style: TextStyle(height: 1.7),
             ),
-            Divider(color: CustomColor.whitePrimary),
-            Text(
-              "Technologies I have worked with : ",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            SizedBox(
+              height: 20,
             ),
+            Divider(
+              color: CustomColor.whitePrimary,
+              height: 0,
+            ),
+            // List of Tools And technologies
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              padding: EdgeInsets.all(0),
-              itemCount: techList.length,
+              itemCount: toolsAndTechnologies.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  horizontalTitleGap: 5,
-                  leading: CircleAvatar(
-                    radius: 3,
-                    backgroundColor: CustomColor.whitePrimary,
-                  ),
-                  title: Text(techList[index]),
+                String category = toolsAndTechnologies.keys.elementAt(index);
+                List<String> items = toolsAndTechnologies[category]!;
+                return Column(
+                  children: [
+                    ExpansionTile(
+                      title: Text(category),
+                      children: items
+                          .map((item) => ListTile(title: Text("-  $item")))
+                          .toList(),
+                    )
+                  ],
                 );
               },
             ),
-            Divider(color: CustomColor.whitePrimary),
-            Text(
-              "Tools I'm familiar with: ",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+
+            Divider(
+              color: CustomColor.whitePrimary,
+              height: 0,
             ),
-            // tools list
-            ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              padding: EdgeInsets.all(0),
-              itemCount: toolList.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  horizontalTitleGap: 5,
-                  leading: CircleAvatar(
-                    radius: 3,
-                    backgroundColor: CustomColor.whitePrimary,
-                  ),
-                  title: Text(toolList[index]),
-                );
-              },
+            SizedBox(
+              height: 20,
             ),
-            Divider(color: CustomColor.whitePrimary),
             // personal details list
             ListView.separated(
               physics: NeverScrollableScrollPhysics(),
@@ -100,7 +91,7 @@ class _AboutState extends State<About> {
                 final detailValue = detail.values.first;
                 return Text(
                   "$detailKey : $detailValue",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                 );
               },
             )

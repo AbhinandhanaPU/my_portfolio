@@ -32,7 +32,6 @@ class EducationMobile extends StatelessWidget {
                   for (int i = 0; i < educationDetails.length; i++)
                     EducationMobileCard(
                       education: educationDetails[i],
-                      width: screenWidth * 3 / 4,
                     ),
                 ],
               ),
@@ -48,17 +47,16 @@ class EducationMobileCard extends StatelessWidget {
   const EducationMobileCard({
     super.key,
     required this.education,
-    required this.width,
   });
   final EducationModel education;
-  final double width;
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      height: 120,
-      width: width,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      height: 150,
+      width: screenWidth * 3 / 4,
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: CustomColor.bgLight2,

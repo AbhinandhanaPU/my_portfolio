@@ -30,7 +30,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
             children: [
               // intro message
               const Text(
-                "Hi,\nI'm Abhinandhana P U\nA Flutter Developer",
+                "Hi,\nI'm Abhinandhana \nA Flutter Developer",
                 style: TextStyle(
                   fontSize: 30,
                   height: 1.5,
