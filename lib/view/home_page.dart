@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/constants/color_const.dart';
-import 'package:my_portfolio/utils/constants/size.dart';
+import 'package:my_portfolio/view/responsive/responsive.dart';
 import 'package:my_portfolio/view/widgets/about/about.dart';
+import 'package:my_portfolio/view/widgets/certificates/certificates_section.dart';
 import 'package:my_portfolio/view/widgets/contact/contact_section.dart';
 import 'package:my_portfolio/view/widgets/education/education_desktop.dart';
 import 'package:my_portfolio/view/widgets/education/education_mobile.dart';
@@ -21,64 +22,91 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
+  final List<GlobalKey> navbarKeys = List.generate(6, (index) => GlobalKey());
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: LayoutBuilder(builder: (context, constraints) {
-        return Scaffold(
-          key: scaffoldKey,
-          backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth >= minDesktopWidth
-              ? null
-              : DrawerMobile(
-                  onNavItemTap: (p0) {
-                    scaffoldKey.currentState?.closeEndDrawer();
-                  },
-                ),
-          body: Column(
-            children: [
-              // header
-              if (constraints.maxWidth >= minDesktopWidth)
-                HeaderDesktop()
-              else
-                HeaderMobile(
-                  onLogoTap: () {},
-                  onMenuTap: () {
-                    scaffoldKey.currentState?.openEndDrawer();
-                  },
-                ),
-              Expanded(
-                child: PageView(
-                  scrollDirection: Axis.vertical,
-                  physics: AlwaysScrollableScrollPhysics(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: CustomColor.scaffoldBg,
+        endDrawer: ResponsiveWebSite.isDesktop(context)
+            ? null
+            : DrawerMobile(
+                onNavItemTap: (int navIndex) {
+                  scaffoldKey.currentState?.closeEndDrawer();
+                  scrollToSection(navIndex);
+                },
+              ),
+        body: Column(
+          children: [
+            // header
+            ResponsiveWebSite.isDesktop(context)
+                ? HeaderDesktop(onNavItemTap: (int navIndex) {
+                    scrollToSection(navIndex);
+                  })
+                : HeaderMobile(
+                    onLogoTap: () {},
+                    onMenuTap: () {
+                      scaffoldKey.currentState?.openEndDrawer();
+                    },
+                  ),
+            Expanded(
+              child: SingleChildScrollView(
+                controller: scrollController,
+                scrollDirection: Axis.vertical,
+                physics: AlwaysScrollableScrollPhysics(),
+                child: Column(
                   children: [
+                    SizedBox(
+                      key: navbarKeys.first,
+                    ),
                     // home
-                    if (constraints.maxWidth >= minDesktopWidth)
-                      HomeDesktop()
-                    else
-                      HomeMobile(),
+                    ResponsiveWebSite.isDesktop(context)
+                        ? HomeDesktop()
+                        : HomeMobile(),
                     // about
-                    About(),
+                    About(
+                      key: navbarKeys[1],
+                    ),
 
                     // projects
-                    ProjectSection(),
-
+                    ProjectSection(
+                      key: navbarKeys[2],
+                    ),
+                    SizedBox(
+                      key: navbarKeys[3],
+                    ),
                     // education
-                    if (constraints.maxWidth >= minDesktopWidth)
-                      EducationDesktop()
-                    else
-                      EducationMobile(),
+                    ResponsiveWebSite.isDesktop(context)
+                        ? EducationDesktop()
+                        : EducationMobile(),
 
                     // certifications
-                    ContactSection(),
+                    CerttificatesSection(
+                      key: navbarKeys[4],
+                    ),
                     // contact
+                    ContactSection(
+                      key: navbarKeys[5],
+                    ),
                   ],
                 ),
               ),
-            ],
-          ),
-        );
-      }),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void scrollToSection(int navIndex) {
+    final key = navbarKeys[navIndex];
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

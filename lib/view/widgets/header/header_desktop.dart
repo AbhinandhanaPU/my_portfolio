@@ -4,14 +4,13 @@ import 'package:my_portfolio/utils/constants/nav_items.dart';
 import 'package:my_portfolio/utils/style/style.dart';
 import 'package:my_portfolio/view/widgets/site_logo.dart';
 
-class HeaderDesktop extends StatefulWidget {
-  const HeaderDesktop({super.key});
+class HeaderDesktop extends StatelessWidget {
+  const HeaderDesktop({
+    super.key,
+    required this.onNavItemTap,
+  });
+  final Function(int) onNavItemTap;
 
-  @override
-  State<HeaderDesktop> createState() => _HeaderDesktopState();
-}
-
-class _HeaderDesktopState extends State<HeaderDesktop> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,7 +29,9 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
           const Spacer(),
           for (int i = 0; i < navTitles.length; i++)
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                onNavItemTap(i);
+              },
               child: Text(
                 navTitles[i],
                 style: const TextStyle(

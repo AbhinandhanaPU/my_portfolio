@@ -15,7 +15,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
     final screenHeight = screenSize.height;
 
     return Container(
-      height: screenHeight / 1.2,
+      height: screenHeight,
       margin: const EdgeInsets.symmetric(
         horizontal: 20.0,
       ),

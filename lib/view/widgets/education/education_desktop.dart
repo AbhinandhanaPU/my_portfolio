@@ -8,8 +8,10 @@ class EducationDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       child: Container(
+        height: screenHeight,
         width: screenWidth,
         padding: EdgeInsets.symmetric(vertical: 30),
         child: Column(
@@ -27,7 +29,7 @@ class EducationDesktop extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 900),
               child: Wrap(
-                runSpacing: 25,
+                runSpacing: 40,
                 children: [
                   for (int i = 0; i < educationDetails.length; i++)
                     EducationDesktopCard(

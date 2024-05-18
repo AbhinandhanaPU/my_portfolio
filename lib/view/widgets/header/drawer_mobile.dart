@@ -10,7 +10,9 @@ class DrawerMobile extends StatelessWidget {
   final Function(int) onNavItemTap;
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Drawer(
+      width: screenWidth * 3 / 4,
       backgroundColor: CustomColor.scaffoldBg,
       child: ListView(
         children: [
