@@ -29,7 +29,7 @@ List<CertificateModel> certificates = [
         "https://www.coursera.org/account/accomplishments/records/G64HK2DYLLK4",
   ),
   CertificateModel(
-    title: "Interndhip on Machine Learning",
+    title: "Internship on Machine Learning",
     sub: "Grapegenix Software Solutions ,Thrissur",
     time: "",
     link:
