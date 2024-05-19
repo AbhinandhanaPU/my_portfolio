@@ -24,7 +24,7 @@ List<CertificateModel> certificates = [
   CertificateModel(
     title: "Get Started with Figma",
     sub: "Coursera",
-    time: "02-Feb- 2024",
+    time: "02 Feb 2024",
     link:
         "https://www.coursera.org/account/accomplishments/records/G64HK2DYLLK4",
   ),
@@ -38,7 +38,7 @@ List<CertificateModel> certificates = [
   CertificateModel(
     title: "Bootcamp of software testing ",
     sub: "ICT Acadamy Kalamassery , Kochi",
-    time: "",
+    time: "15 July 2023",
     link:
         "https://drive.google.com/file/d/1NR3EUa0K1QYEICNeb_lzIqbXFwi4lhBp/view?usp=sharing",
   ),
