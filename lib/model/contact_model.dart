@@ -16,7 +16,7 @@ List<ContactModel> contactDetails = [
   ContactModel(
     icon: "assets/phone.png",
     title: "Phone Number",
-    data: "6238166681",
+    data: "+91 6238166681",
   ),
   ContactModel(
     icon: "assets/mail.png",

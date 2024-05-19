@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/constants/color_const.dart';
 import 'package:my_portfolio/utils/constants/nav_items.dart';
 import 'package:my_portfolio/utils/style/style.dart';
-import 'package:my_portfolio/view/widgets/site_logo.dart';
+import 'package:my_portfolio/widgets/site_logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({
     super.key,
     required this.onNavItemTap,
+    required this.onLogoTap,
   });
+  final Function(int) onLogoTap;
   final Function(int) onNavItemTap;
 
   @override
@@ -24,7 +26,9 @@ class HeaderDesktop extends StatelessWidget {
       child: Row(
         children: [
           SiteLogo(
-            onTap: () {},
+            onTap: () {
+              onLogoTap(0);
+            },
           ),
           const Spacer(),
           for (int i = 0; i < navTitles.length; i++)

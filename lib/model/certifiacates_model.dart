@@ -19,7 +19,7 @@ List<CertificateModel> certificates = [
         "National Council for Technology and Training Luminar technolab, kerala",
     time: "Aug 2023 - Dec 2023",
     link:
-        "https://www.coursera.org/account/accomplishments/records/G64HK2DYLLK4",
+        "https://drive.google.com/file/d/1NRoIi2-ZbZcT6BONhUM764LZofbei9D2/view?usp=sharing",
   ),
   CertificateModel(
     title: "Get Started with Figma",
@@ -33,13 +33,13 @@ List<CertificateModel> certificates = [
     sub: "Grapegenix Software Solutions ,Thrissur",
     time: "",
     link:
-        "https://www.coursera.org/account/accomplishments/records/G64HK2DYLLK4",
+        "https://drive.google.com/file/d/1NO8NzAv1YgGUkcgYE12GYehRIovNagyk/view?usp=sharing",
   ),
   CertificateModel(
     title: "Bootcamp of software testing ",
     sub: "ICT Acadamy Kalamassery , Kochi",
     time: "",
     link:
-        "https://www.coursera.org/account/accomplishments/records/G64HK2DYLLK4",
+        "https://drive.google.com/file/d/1NR3EUa0K1QYEICNeb_lzIqbXFwi4lhBp/view?usp=sharing",
   ),
 ];

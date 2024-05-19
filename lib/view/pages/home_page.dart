@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/constants/color_const.dart';
+import 'package:my_portfolio/view/pages/about/about.dart';
+import 'package:my_portfolio/view/pages/certificates/certificates_section.dart';
+import 'package:my_portfolio/view/pages/contact/contact_section.dart';
+import 'package:my_portfolio/view/pages/education/education_desktop.dart';
+import 'package:my_portfolio/view/pages/education/education_mobile.dart';
+import 'package:my_portfolio/view/pages/header/header_desktop.dart';
+import 'package:my_portfolio/view/pages/header/header_mobile.dart';
+import 'package:my_portfolio/view/pages/home/home_desktop.dart';
+import 'package:my_portfolio/view/pages/home/home_mobile.dart';
+import 'package:my_portfolio/view/pages/projects/project_section.dart';
 import 'package:my_portfolio/view/responsive/responsive.dart';
-import 'package:my_portfolio/view/widgets/about/about.dart';
-import 'package:my_portfolio/view/widgets/certificates/certificates_section.dart';
-import 'package:my_portfolio/view/widgets/contact/contact_section.dart';
-import 'package:my_portfolio/view/widgets/education/education_desktop.dart';
-import 'package:my_portfolio/view/widgets/education/education_mobile.dart';
-import 'package:my_portfolio/view/widgets/header/drawer_mobile.dart';
-import 'package:my_portfolio/view/widgets/header/header_desktop.dart';
-import 'package:my_portfolio/view/widgets/header/header_mobile.dart';
-import 'package:my_portfolio/view/widgets/home/home_desktop.dart';
-import 'package:my_portfolio/view/widgets/home/home_mobile.dart';
-import 'package:my_portfolio/view/widgets/projects/project_section.dart';
+import 'package:my_portfolio/widgets/drawer_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,14 +42,21 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           children: [
             // header
-            ResponsiveWebSite.isDesktop(context)
-                ? HeaderDesktop(onNavItemTap: (int navIndex) {
-                    scrollToSection(navIndex);
-                  })
-                : HeaderMobile(
-                    onLogoTap: () {},
+            ResponsiveWebSite.isMobile(context)
+                ? HeaderMobile(
+                    onLogoTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
                     onMenuTap: () {
                       scaffoldKey.currentState?.openEndDrawer();
+                    },
+                  )
+                : HeaderDesktop(
+                    onLogoTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                    onNavItemTap: (int navIndex) {
+                      scrollToSection(navIndex);
                     },
                   ),
             Expanded(
@@ -63,9 +70,9 @@ class _HomePageState extends State<HomePage> {
                       key: navbarKeys.first,
                     ),
                     // home
-                    ResponsiveWebSite.isDesktop(context)
-                        ? HomeDesktop()
-                        : HomeMobile(),
+                    ResponsiveWebSite.isMobile(context)
+                        ? HomeMobile()
+                        : HomeDesktop(),
                     // about
                     About(
                       key: navbarKeys[1],

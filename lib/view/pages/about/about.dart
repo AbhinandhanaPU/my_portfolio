@@ -62,6 +62,7 @@ class _AboutState extends State<About> {
                 return Column(
                   children: [
                     ExpansionTile(
+                      tilePadding: EdgeInsets.all(0),
                       title: Text(category),
                       children: items
                           .map((item) => ListTile(title: Text("-  $item")))

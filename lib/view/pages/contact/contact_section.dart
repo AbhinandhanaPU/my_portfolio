@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:my_portfolio/model/contact_model.dart';
 import 'package:my_portfolio/utils/constants/color_const.dart';
 import 'package:my_portfolio/view/responsive/responsive.dart';
-import 'package:my_portfolio/view/widgets/contact/contact_card.dart';
+import 'package:my_portfolio/view/pages/contact/contact_card.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});

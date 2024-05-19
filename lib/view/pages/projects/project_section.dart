@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/model/certifiacates_model.dart';
+import 'package:my_portfolio/model/project_model.dart';
 import 'package:my_portfolio/utils/constants/color_const.dart';
-import 'package:my_portfolio/view/responsive/responsive.dart';
-import 'package:my_portfolio/view/widgets/certificates/certificates_card.dart';
+import 'package:my_portfolio/view/pages/projects/project_card.dart';
 
-class CerttificatesSection extends StatelessWidget {
-  const CerttificatesSection({super.key});
+class ProjectSection extends StatelessWidget {
+  const ProjectSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
       child: Container(
         padding: EdgeInsets.only(top: 15, left: 10, right: 10),
         width: screenWidth,
-        height: ResponsiveWebSite.isDesktop(context) ? screenHeight : null,
         child: Column(
           children: [
             const Text(
-              "Certificates & Skill development programs",
+              "Projects",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: CustomColor.whitePrimary,
               ),
@@ -31,12 +28,12 @@ class CerttificatesSection extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 900),
               child: Wrap(
-                spacing: 40,
-                runSpacing: 40,
+                spacing: 25,
+                runSpacing: 25,
                 children: [
-                  for (int i = 0; i < certificates.length; i++)
-                    CertificatesCard(
-                      skillData: certificates[i],
+                  for (int i = 0; i < projectDetails.length; i++)
+                    ProjectCard(
+                      project: projectDetails[i],
                     ),
                 ],
               ),

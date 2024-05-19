@@ -11,15 +11,15 @@ class CertificatesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 200,
-      width: 330,
+      height: 220,
+      width: 300,
       padding: EdgeInsets.only(left: 12, right: 12, top: 15, bottom: 10),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: CustomColor.whiteSecondary,
-            spreadRadius: 1,
-            blurRadius: 5,
+            offset: Offset(0, 0),
+            blurRadius: 6,
           ),
         ],
         borderRadius: BorderRadius.circular(10),

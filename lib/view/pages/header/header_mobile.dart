@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/style/style.dart';
-import 'package:my_portfolio/view/widgets/site_logo.dart';
+import 'package:my_portfolio/widgets/site_logo.dart';
 
 class HeaderMobile extends StatelessWidget {
   const HeaderMobile({
     super.key,
-    this.onLogoTap,
+    required this.onLogoTap,
     this.onMenuTap,
   });
-  final VoidCallback? onLogoTap;
+  final Function(int) onLogoTap;
   final VoidCallback? onMenuTap;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 50.0,
-      margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
+      margin: const EdgeInsets.fromLTRB(15, 5, 15, 5),
       decoration: headerDecoration,
       child: Row(
         children: [
           SiteLogo(
-            onTap: onLogoTap,
+            onTap: () {
+              onLogoTap(0);
+            },
           ),
           const Spacer(),
           IconButton(
